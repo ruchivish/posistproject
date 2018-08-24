@@ -31,25 +31,13 @@ this.HashValue=HashValue;
  //creating the genesisnode.
  Date dt=new Date();
  int id=1;
-  try {
-           
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(passwordToHash.getBytes());
-            byte[] bytes = md.digest();
-            StringBuilder sb = new StringBuilder();
-            for(int i=0; i< bytes.length ;i++)
-            {
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-           
-            generatedPassword = sb.toString();
-        }
-        catch (NoSuchAlgorithmException e)
-        {
-            e.printStackTrace();
-        }
-        System.out.println(generatedPassword);
- Node genesisNode=new Node(dt,id,
- 
+  int n_num=12345;
+  double value=30.00;
+  String owner_name="A";
+  encrypt_decrypt en=new encrypt_decrypt();
+ String data_to_encrypt="null"+value.toString()+owner_name+en.encrypt_data(Integer.toString(id)+Double.toString(value)+owner_name);
+ Node genesisNode=new Node(dt,en.encrypt_data(data_to_encrypt),id,n_num,null,
+ //creating the childnodes
+  Node chilnode1=new Node(dt,en.);
  }
  }
