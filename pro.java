@@ -38,6 +38,6 @@ this.HashValue=HashValue;
  String data_to_encrypt="null"+value.toString()+owner_name+en.encrypt_data(Integer.toString(id)+Double.toString(value)+owner_name);
  Node genesisNode=new Node(dt,en.encrypt_data(data_to_encrypt),id,n_num,null,
  //creating the childnodes
-  Node chilnode1=new Node(dt,en.);
+  create_child children=new create_child(genesis);
  }
  }
